@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shalu's Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: white;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        header {
+            padding: 20px;
+            background-color: #111;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid cyan;
+        }
+        .logo {
+            font-size: 2rem;
+            color: cyan;
+        }
+        nav {
+            margin-top: 10px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: 0.3s;
+        }
+        nav ul li a:hover {
+            color: cyan;
+        }
+        .section {
+            padding: 60px 20px;
+            border-bottom: 2px solid #333;
+        }
+        .glow-text {
+            color: cyan;
+            text-shadow: 0 0 10px cyan;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .project-card {
+            background-color: #222;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+        .project-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px cyan;
+        }
+        .btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: cyan;
+            color: black;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        .btn:hover {
+            background-color: white;
+            color: black;
+        }
+        footer {
+            background-color: #111;
+            padding: 20px;
+            margin-top: 30px;
+            border-top: 2px solid cyan;
+        }
+        .social-links {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        .social-links li {
+            margin: 0 15px;
+        }
+        .social-links li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.5rem;
+        }
+        .social-links li a:hover {
+            color: cyan;
+        }
+        .typing-text {
+            font-size: 24px;
+            font-weight: bold;
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 2px solid cyan;
+            display: inline-block;
+            animation: typing 4s steps(40, end) infinite alternate;
+        }
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1 class="logo">Shalu Jhaa</h1>
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#internships">Internships</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section id="about" class="section">
+    <div class="container">
+        <h2 class="glow-text">About Me</h2>
+        <p class="typing-text">I'm Shalu, a passionate Web Developer, IoT Enthusiast, and ML Learner.</p>
+        <p>I have completed <strong>20+ certifications</strong>, worked on multiple projects, and participated in various hackathons.</p>
+        <a href="C:\Users\DELL\Downloads\Documents\Resume.pdf" class="btn" download>Download Resume</a>
+    </div>
+</section>
+
+<section id="projects" class="section">
+    <div class="container">
+        <h2 class="glow-text">Projects</h2>
+        <div class="project-card">
+            <h3>Smart Irrigation System</h3>
+            <p>A drone-based intelligent ET sensing system for efficient irrigation water use.</p>
+            <a href="#" class="btn">View Project</a>
+        </div>
+        <div class="project-card">
+            <h3>Smart Door Authentication</h3>
+            <p>Face detection-based door authentication system using ML & IoT.</p>
+            <a href="#" class="btn">View Project</a>
+        </div>
+        <div class="project-card">
+            <h3>Bank Churn Model</h3>
+            <p>Built an ML model to predict customer churn for banks.</p>
+            <a href="#" class="btn">View Project</a>
+        </div>
+    </div>
+</section>
+
+<section id="internships" class="section">
+    <div class="container">
+        <h2 class="glow-text">Internships</h2>
+        <p>Completed internships in <strong>Cloud Computing</strong> and <strong>Machine Learning</strong>.</p>
+        <p>Served as a <strong>Microsoft Student Ambassador</strong> and <strong>IIT Delhi Student Ambassador</strong>.</p>
+    </div>
+</section>
+
+<section id="contact" class="section">
+    <div class="container">
+        <h2 class="glow-text">Contact</h2>
+        <p>Let's connect and build something great!</p>
+        <ul class="social-links">
+            <li><a href="mailto:shalu@email.com">📧 Email</a></li>
+            <li><a href="#">🔗 LinkedIn</a></li>
+            <li><a href="#">💻 GitHub</a></li>
+        </ul>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2025 Shalu Jhaa| All Rights Reserved</p>
+</footer>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const sections = document.querySelectorAll(".section");
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = "translateY(0)";
+                }
+            });
+        }, { threshold: 0.2 });
+        
+        sections.forEach(section => {
+            section.style.opacity = 0;
+            section.style.transform = "translateY(20px)";
+            observer.observe(section);
+        });
+    });
+</script>
+
+</body>
+</html>
